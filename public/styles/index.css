@@ -1,0 +1,215 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body, p {
+    margin: 0;
+}
+body {
+    box-sizing: border-box;
+    background: url('/image/tree.jpg') 0 / cover fixed;
+    font-size: 16px;
+    color: #333;
+    font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+}
+body * {
+    box-sizing: inherit;
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.chat {
+    width: 960px;
+    height: 751px;
+    margin: 120px auto 0;
+    border-radius: 10px;
+    background: rgba(187, 235, 255, .7);
+    box-shadow: 0 0 10px #bbebff;
+    position: relative;
+    border: 2px solid rgba(187, 235, 255, .1);
+}
+.chat::after {
+    content: '';
+    background: url('/image/tree.jpg') 0 /cover fixed;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+}
+.clear::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.chat .chat-box {
+    float: left;
+    width: 719px;
+    height: 100%;
+    border-right: 2px solid rgba(255, 255, 255, .5);
+}
+.chat .friend-list {
+    float: left;
+    width: 237px;
+    height: 100%;
+}
+.chat .friend-list .friend-title {
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 1px;
+}
+.chat .friend-list .friend-container {
+    height: 720px;
+    overflow: hidden;
+}
+.chat .friend-list .friend-inside {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.chat .friend-list .friend-item {
+    height: 80px;
+    padding: 10px;
+}
+.chat .friend-list .friend-item:hover {
+    background: rgba(255, 255, 255, .2);
+}
+.chat .friend-item .friend-img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.chat .friend-item .friend-text {
+    height: 100%;
+}
+.chat .friend-item .friend-name {
+    font-size: 18px;
+    line-height: 32px;
+}
+.chat .friend-item .friend-describe {
+    font-size: 14px;
+    color: #666;
+    line-height: 28px;
+}
+
+
+.chat .chat-box .chat-history {
+    height: 575px;
+    overflow: hidden;
+    padding: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+}
+.chat .chat-history .chat-detail {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.chat .chat-detail .chat-item {
+    margin-bottom: 10px;
+}
+.chat .chat-detail .chat-item::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.chat .chat-item .chat-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.chat .chat-item .chat-text {
+    max-width: 500px;
+}
+.chat .chat-text .chat-name {
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+}
+.chat .chat-text .chat-content {
+    border-radius: 5px;
+    background: #eee;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: justify;
+    position: relative;
+}
+.chat .chat-others .chat-img {
+    float: left;
+    margin-right: 10px;
+}
+.chat .chat-others .chat-text {
+    text-align: left;
+    float: left;
+}
+.chat .chat-others .chat-content::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    left: -4px;
+    top: 8px;
+    transform: rotateZ(45deg);
+    background: #eee;
+}
+.chat .chat-mine .chat-img {
+    float: right;
+    margin-left: 10px;
+}
+.chat .chat-mine .chat-text {
+    text-align: right;
+    float: right;
+}
+.chat .chat-mine .chat-content::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    right: -4px;
+    top: 8px;
+    transform: rotateZ(45deg);
+    background: #eee;
+}
+
+
+.chat .chat-input {
+    height: 172px;
+}
+.chat .chat-input .chat-inputArea {
+    height: 132px;
+    overflow: hidden;
+}
+.chat .chat-inputArea textarea {
+    font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+    outline: none;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    resize: none;
+    min-height: 132px;
+    font-size: 16px;
+    line-height: 2em;
+    padding: 4px 10px;
+}
+.chat .chat-input .btn {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    float: right;
+    margin: 5px 10px;
+}
+.chat .chat-input .btn:hover {
+    background: rgba(255, 255, 255, .5);
+}
