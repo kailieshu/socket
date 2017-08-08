@@ -2,36 +2,43 @@
     {
         "name": "鸣人",
         "img": "/image/img01.jpg",
+        "des": "最强嘴遁之术",
         "id": 1
     },
     {
         "name": "无脸男",
         "img": "/image/img02.jpg",
+        "des": "反正没有脸",
         "id": 2
     },
     {
         "name": "盲仔",
         "img": "/image/img03.jpg",
+        "des": "一酷",
         "id": 3
     },
     {
         "name": "路飞",
         "img": "/image/img04.jpg",
+        "des": "要成为海贼王的--男人",
         "id": 4
     },
     {
         "name": "马里奥",
         "img": "/image/img05.jpg",
+        "des": "水管工",
         "id": 5
     },
     {
         "name": "美国队长",
         "img": "/image/img06.jpg",
+        "des": "巴基巴基",
         "id": 6
     },
     {
         "name": "蝙蝠侠",
         "img": "/image/img07.jpg",
+        "des": "不晓得",
         "id": 7
     }
 ]

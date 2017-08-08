@@ -15,6 +15,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
+    "mongoose": "^4.11.5",
     "socket.io": "^2.0.3"
   }
 }
