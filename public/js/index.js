@@ -1,5 +1,5 @@
 window.onload = function () {
-    var socket = io.connect('http://localhost')
+  var socket = io.connect('http://localhost')
   var myInfo, userInfo, otherInfo
   var friend = document.getElementsByClassName('friend-inside')[0]
   ajax({
@@ -7,8 +7,6 @@ window.onload = function () {
     url: '/getId'
   }, function (data) {
     myInfo = JSON.parse(data)
-    document.cookie = 'id=' + myInfo.id
-    console.log(document.cookie)
     ajax({
       method: 'GET',
       url: '/getUserList'
@@ -28,6 +26,7 @@ window.onload = function () {
         `
         fragment.appendChild(node)
       })
+      
       friend.appendChild(fragment)
     })
   });
@@ -55,10 +54,39 @@ window.onload = function () {
     `
       chatDetail.appendChild(li)
       
-      socket.emit('private', {from: myInfo.id, to: otherInfo.id, msg: inputText.value})
+      socket.emit('private', {toId: otherInfo.id, msg: inputText.value})
 
       inputText.value = ''
     }
+  })();
+  // 接收消息
+  var msgId
+  var fromUser = {};
+  (function() {
+    socket.on('private', function(data) {
+      msgId = data.fromId
+      var chatClass = 'chat-' + msgId
+      var element = document.getElementsByClassName(chatClass)[0]
+      for (var i = 0; i < userInfo.length; i++) {
+        if (userInfo[i].id == msgId) {
+          fromUser = Object.assign({}, userInfo[i])
+        }
+      }
+      var li = document.createElement('li')
+      li.className = 'chat-item chat-others'
+      li.innerHTML = `
+        <img src=${fromUser.img} class="chat-img"/>
+        <div class="chat-text">
+            <div class="chat-name">
+                ${fromUser.name}
+            </div>
+            <div class="chat-content">
+                ${data.msg}
+            </div>
+        </div>
+      `
+      element.appendChild(li)
+    })
   })();
 
 

@@ -4,7 +4,8 @@
   "description": "a chat application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index"
   },
   "keywords": [
     "chat",
@@ -15,7 +16,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
-    "mongoose": "^4.11.6",
+    "mongoose": "^4.11.5",
     "socket.io": "^2.0.3"
   }
 }
