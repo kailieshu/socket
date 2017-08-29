@@ -1,9 +1,10 @@
 var express = require('express')
 var app = express()
 var cookieParser = require('cookie-parser')
-require('./db')
+// require('./db')
 var server = require('http').Server(app)
 var io = require('socket.io')(server)
+server.listen(8080)
 
 // cookie
 app.use(cookieParser())
@@ -67,4 +68,4 @@ io.on('connection', function(socket) {
     })
 })
 
-server.listen(80)
+// server.listen(8080)

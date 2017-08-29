@@ -1,5 +1,5 @@
 window.onload = function () {
-  var socket = io.connect('http://localhost')
+  var socket = io.connect('http://localhost:8080')
   var myInfo, userInfo, otherInfo
   var friend = document.getElementsByClassName('friend-inside')[0]
   ajax({
